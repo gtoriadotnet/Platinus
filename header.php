@@ -12,7 +12,8 @@
 <meta name="og:description" content="Platinus is an old ROBLOX revival(2009,2011,2013). We are not affiliated with ROBLOX in any shape or form.">
 <style>
 body{
-	background-color: rgb(245,245,255);
+	background: url("/img/bodybackground1.png");
+	background-size: contain;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;

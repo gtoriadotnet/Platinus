@@ -5,14 +5,16 @@ include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/include.php");
 <html lang="en">
 <head>
 <title>Platinus</title>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/header.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/header.php");?>
 </head>
 <body>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/navbar.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/navbar.php");?>
 <div class="main">
 <section class="jumbotron text-center" style="
     background-image: url('/img/jumbotron-img1.png');
     background-position: center;
+	box-shadow: 0px -12px 20px black;
+	border-radius:0;
 ">
 <div class="container" style="
     padding-top: 50px;
@@ -45,6 +47,6 @@ include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/include.php");
 </div>
 </section>
 </div>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/footer.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/footer.php");?>
 </body>
 </html>

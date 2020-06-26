@@ -3,7 +3,7 @@ include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/include.php");
 if(isset($_GET["id"])){
 	if(!@(int)$_GET["id"]){
 		http_response_code(404);
-		include_once($_SERVER["DOCUMENT_ROOT"] . "/error/404.php");
+		include_once($_SERVER["DOCUMENT_ROOT"] . "/error.php");
 		exit();
 	}
 	$post = $GLOBALS["sql"]->prepare("SELECT * FROM `forum-posts` WHERE id = ?");
@@ -11,17 +11,17 @@ if(isset($_GET["id"])){
 	$result = $post->fetch(PDO::FETCH_ASSOC);
 	if($result["Hidden"]==true){
 		http_response_code(404);
-		include_once($_SERVER["DOCUMENT_ROOT"] . "/error/404.php");
+		include_once($_SERVER["DOCUMENT_ROOT"] . "/error.php");
 		exit();		
 	}
 	if(!$result){
 		http_response_code(404);
-		include_once($_SERVER["DOCUMENT_ROOT"] . "/error/404.php");
+		include_once($_SERVER["DOCUMENT_ROOT"] . "/error.php");
 		exit();
 	}
 }else{
 	http_response_code(404);
-	include_once($_SERVER["DOCUMENT_ROOT"] . "/error/404.php");
+	include_once($_SERVER["DOCUMENT_ROOT"] . "/error.php");
 	exit();
 }
 ?>
@@ -29,10 +29,10 @@ if(isset($_GET["id"])){
 <html lang="en">
 <head>
 <title>Platinus Forum - <?php echo htmlspecialchars($result["Subject"],ENT_QUOTES,'UTF-8'); ?></title>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/header.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/header.php");?>
 </head>
 <body>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/navbar.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/navbar.php");?>
 <div class="main">
 <section class="section">
 <div class="container">
@@ -60,6 +60,6 @@ $groupResult = $group->fetch(PDO::FETCH_ASSOC);
 </div>
 </section>
 </div>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/footer.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/footer.php");?>
 </body>
 </html>

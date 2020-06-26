@@ -12,7 +12,7 @@ if(file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/offline.txt")=="0"){
 <html lang="en">
 <head>
 <title>Platinus - Maintenance</title>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/header.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/header.php");?>
 <script>
 setInterval(function(){
 window.location.reload();
@@ -38,6 +38,6 @@ Platinus
 </div>
 </section>
 </div>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/footer.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/footer.php");?>
 </body>
 </html>

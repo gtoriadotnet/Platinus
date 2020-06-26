@@ -24,4 +24,5 @@ if(file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/offline.txt")=="1"&&
 	header("Location: https://" . $_SERVER['HTTP_HOST'] . "/maintenance/constraint/?return=" . urlencode("https://" . $_SERVER['HTTP_HOST'] . $_SERVER["REQUEST_URI"]));
 	exit;
 }
+
 ?>

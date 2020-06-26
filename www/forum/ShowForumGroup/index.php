@@ -3,7 +3,7 @@ include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/include.php");
 if(isset($_GET["group"])){
 	if(!@(int)$_GET["group"]){
 		http_response_code(404);
-		include_once($_SERVER["DOCUMENT_ROOT"] . "/error/404.php");
+		include_once($_SERVER["DOCUMENT_ROOT"] . "/error.php");
 		exit();
 	}
 	$topic = $GLOBALS["sql"]->prepare("SELECT * FROM `forum-topics` WHERE id = ?");
@@ -11,12 +11,12 @@ if(isset($_GET["group"])){
 	$result = $topic->fetch(PDO::FETCH_ASSOC);
 	if(!$result){
 		http_response_code(404);
-		include_once($_SERVER["DOCUMENT_ROOT"] . "/error/404.php");
+		include_once($_SERVER["DOCUMENT_ROOT"] . "/error.php");
 		exit();
 	}
 }else{
 	http_response_code(404);
-	include_once($_SERVER["DOCUMENT_ROOT"] . "/error/404.php");
+	include_once($_SERVER["DOCUMENT_ROOT"] . "/error.php");
 	exit();
 }
 ?>
@@ -24,10 +24,10 @@ if(isset($_GET["group"])){
 <html lang="en">
 <head>
 <title>Platinus Forum - <?php echo $result["Name"]; ?></title>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/header.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/header.php");?>
 </head>
 <body>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/navbar.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/navbar.php");?>
 <div class="main">
 <section class="section">
 <div class="container">
@@ -63,6 +63,6 @@ foreach($sections as $section){
 </div>
 </section>
 </div>
-<?php echo file_get_contents(dirname($_SERVER["DOCUMENT_ROOT"]) . "/footer.php");?>
+<?php include_once(dirname($_SERVER["DOCUMENT_ROOT"]) . "/footer.php");?>
 </body>
 </html>
