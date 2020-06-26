@@ -1,6 +1,6 @@
 <!--unfinished lol -->
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="<?php echo "https://" . $_SERVER["HTTP_HOST"] . "/css/bootstrap.css" ?>">
 <script data-ad-client="ca-pub-3667210370239911" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <meta name="author" content="Platinus">
 <meta name="description" content="Platinus is an old ROBLOX revival(2009,2011,2013). We are not affiliated with ROBLOX in any shape or form.">
