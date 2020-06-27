@@ -24,6 +24,8 @@ $errorcodes=$errorcodes->fetch(PDO::FETCH_ASSOC);
 <div class="card-body">
 <h5 class="card-title"><?php echo $errorcodes["code"]; ?></h5>
 <p class="card-text"><?php echo $errorcodes["body"]; ?></p>
+<a href="/home" class="btn btn-primary">Home</a>
+<a href="/forum" class="btn btn-secondary">Forum</a>
 </div>
 </div>
 </div>
