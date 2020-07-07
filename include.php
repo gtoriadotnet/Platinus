@@ -6,7 +6,7 @@ try{
 	$sql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
 	$sql->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 }catch(exception $e){
-	die("Uh oh! We ran into an error while connecting to the database. Be sure to check back soon!");
+	exit("Uh oh! We ran into an error while connecting to the database. Be sure to check back soon!");
 }
 function getUserIpAddr(){ if(!empty($_SERVER['HTTP_CLIENT_IP'])){ $ip = $_SERVER['HTTP_CLIENT_IP']; }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){ $ip = $_SERVER['HTTP_X_FORWARDED_FOR']; }else{ $ip = $_SERVER['REMOTE_ADDR']; } return $ip; }
 
